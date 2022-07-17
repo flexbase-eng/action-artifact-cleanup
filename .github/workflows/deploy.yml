@@ -9,7 +9,7 @@ jobs:
         with:
             use_packr: false
 
-    dist:
+    commit:
         needs: build
         runs-on: ubuntu-latest
         steps:
