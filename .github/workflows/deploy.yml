@@ -4,20 +4,21 @@ on:
         branches: main
 
 jobs:
-    publish:
-      runs-on: ubuntu-latest
-      steps:
-        - name: build
+    build:
         uses: flexbase-eng/.github/.github/workflows/typescript.build.yml@main
         with:
             use_packr: false
             package_folder: output
-        - name: Retrieve build artifacts
-          uses: actions/download-artifact@v3
-          with:
-              name: dist
-        - name: Commit and push binary to main
-          uses: stefanzweifel/git-auto-commit-action@v4
-          with:
-              commit_message: 'Update binary'
-              file_pattern: 'bin/index.js'
+
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Retrieve build artifacts
+              uses: actions/download-artifact@v3
+              with:
+                  name: dist
+            - name: Commit and push binary to main
+              uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: 'Update binary'
+                  file_pattern: 'bin/index.js'
