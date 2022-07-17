@@ -1,0 +1,18 @@
+$ node ./dist/index.js
+::debug::action-artifact-cleanup
+::debug::persona-node-client
+::debug::pay-with-flexbase
+::debug::flexbase-client
+::debug::logger
+::debug::packr
+::debug::.github
+::debug::http-client-middleware
+::debug::marqeta-node-client
+::debug::canopy-node-client
+::debug::flexbase-store
+::debug::notarize-node-client
+::debug::peach-node-client
+::debug::postgrid-node-client
+::debug::procore-iframe-helpers
+15 repos to evaluate
+Retrying after 2601 seconds!

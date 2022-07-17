@@ -1,0 +1,11 @@
+name: 'Artifact cleanup'
+description: 'Github Action to periodically clean up old artifacts'
+author: 'Flexbase'
+inputs:
+  milliseconds: # change this
+    required: true
+    description: 'input description here'
+    default: 'default value if applicable'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
