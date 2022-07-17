@@ -8,6 +8,7 @@ jobs:
         uses: flexbase-eng/.github/.github/workflows/typescript.build.yml@main
         with:
             use_packr: false
+            package_folder: dist
 
     commit:
         needs: build
