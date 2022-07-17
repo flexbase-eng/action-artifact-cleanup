@@ -38,7 +38,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && ncc build",
+    "build": "tsc && ncc build -o output/bin",
     "test": "echo no tests",
     "lint": "eslint 'src/**/*.{ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{ts,tsx,css,md,json}'",
