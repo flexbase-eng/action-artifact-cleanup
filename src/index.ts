@@ -68,16 +68,16 @@ async function run(): Promise<void> {
             let bytes = 0;
 
             toDelete.forEach(async x => {
-                const response = await githubClient.rest.actions.deleteArtifact({ owner: OWNER, repo: x.name, artifact_id: x.id });
+                const response = await githubClient.rest.actions.deleteArtifact({ owner: OWNER, repo: x.repo, artifact_id: x.id });
                 if (response.status !== 204) {
-                    core.warning(`Unable to delete artifact ${x.id} from ${x.name}`);
+                    core.warning(`Unable to delete artifact ${x.id} from ${x.repo}`);
                 } else {
                     bytes = bytes + x.size;
                     totalBytes = totalBytes + x.size;
                 }
             });
 
-            core.info(`${kvp[1]} reclaimed ${bytes} in space`);
+            core.info(`${kvp[0]} reclaimed ${bytes} in space`);
         }
 
         core.info(`Total bytes reclaimed: ${totalBytes}`);

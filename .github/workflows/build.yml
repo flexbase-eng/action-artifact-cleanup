@@ -1,0 +1,9 @@
+name: Build Branch
+on:
+    pull_request:
+
+jobs:
+    build:
+        uses: flexbase-eng/.github/.github/workflows/typescript.build.yml@main
+        with:
+            use_packr: false
