@@ -13,12 +13,18 @@ jobs:
     publish:
         runs-on: ubuntu-latest
         steps:
-            - name: Retrieve build artifacts
-              uses: actions/download-artifact@v3
-              with:
-                  name: dist
-            - name: Commit and push binary to main
-              uses: stefanzweifel/git-auto-commit-action@v4
-              with:
-                  commit_message: 'Update binary'
-                  file_pattern: 'bin/index.js'
+          -name: Checkout
+            uses: actions/checkout@v2
+            with:
+              ref: ${{ github.head_ref }}
+
+          - name: Retrieve build artifacts
+            uses: actions/download-artifact@v3
+            with:
+                name: dist
+
+          - name: Commit and push binary to main
+            uses: stefanzweifel/git-auto-commit-action@v4
+            with:
+                commit_message: 'Update binary'
+                file_pattern: 'bin/index.js'
