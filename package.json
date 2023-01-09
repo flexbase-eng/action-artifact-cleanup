@@ -50,7 +50,7 @@
     "@actions/core": "^1.9.0",
     "@octokit/plugin-rest-endpoint-methods": "^6.1.0",
     "@octokit/plugin-throttling": "^4.1.0",
-    "luxon": "^3.0.1",
+    "luxon": "^3.2.1",
     "octokit": "^2.0.3"
   },
   "jest": {
